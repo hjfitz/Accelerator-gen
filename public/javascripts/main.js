@@ -1,19 +1,28 @@
 const selectionItems = document.querySelectorAll('.selection-item');
 const submitButton = document.getElementById('boilerplate-submit');
 
+const log = (func, data, vars) => {
+  if (vars) {
+    console.log(`[LOG] module=${func} data='${data}' vars=${vars}`);
+  } else {
+    console.log(`[LOG] module=${func} data='${data}'`);
+  }
+};
+
 const selectedItems = {
   layout: {},
   addons: [],
 };
 
 const postSelected = () => {
+  log('postSelected', 'init');
   // create a formData object to send the requirements off
   const body = new FormData();
   // stringify the information we've collected earlier, and send that
   body.append('json', JSON.stringify(selectedItems));
+  log('postSelected', 'appending body data', selectedItems.layout);
 
-
-  fetch('/api/generateBoilerplate', {
+  fetch('/api/boilerplate/generate', {
     method: 'POST',
     body,
   }).then(resp => resp.json()).then((json) => {
@@ -31,9 +40,9 @@ const removeSelected = () => {
 const selectItemClicked = (event) => {
   removeSelected();
   event.target.classList.add('selected');
-  const type = event.target.dataset.itemType;
-  const name = event.target.dataset.itemName;
-  selectedItems[type] = name;
+  selectedItems.layout = event.target.id;
+  log('selectedItemClicked', 'var assign');
+  console.log(selectedItems);
 };
 
 submitButton.addEventListener('click', postSelected);
