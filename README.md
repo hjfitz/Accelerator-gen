@@ -16,8 +16,8 @@ Used to generate an accelerator, based on options provided.
 
 2. Install the dependencies
 
-`npm install`
+`yarn install`
 
 3. Run
 
-`npm start`
+`heroku local`
