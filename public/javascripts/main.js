@@ -15,19 +15,7 @@ const selectedItems = {
 };
 
 const postSelected = () => {
-  log('postSelected', 'init');
-  // create a formData object to send the requirements off
-  const body = new FormData();
-  // stringify the information we've collected earlier, and send that
-  body.append('json', JSON.stringify(selectedItems));
-  log('postSelected', 'appending body data', selectedItems.layout);
-
-  fetch('/api/boilerplate/generate', {
-    method: 'POST',
-    body,
-  }).then(resp => resp.json()).then((json) => {
-    console.log(json);
-  });
+  $.post('/api/boilerplate/generate', selectedItems);
 };
 
 // todo: sometimes adding the class doesn't always stick.

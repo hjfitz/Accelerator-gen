@@ -7,9 +7,17 @@
   </div>
 </div>
 <div class="container">
-  <div class="selection-area" id="layouts">
-    <header class="selection-header" id="layouts-header"><h2>Layouts</h2></header>
-    <div class="selection-item" id="html" data-item-type="layout" data-item-name="html">
+  <div class="selection-area row" id="layouts">
+
+<div class="col-sm-12 col-md-2">
+    <header class="selection-header" id="layouts-header"><h2 class="select-header">Layouts</h2></header>
+</div>
+
+<div class="col-sm-12 col-md-10">
+
+  <div class="row justify-content-md-center">
+
+    <div class="selection-item col-sm-12 col-md-3" id="html" data-item-type="layout" data-item-name="html">
       <div class="selection-image-container">
         <img class="selection selection-image" src="/img/logos/html.svg" alt="html logo" />
       </div>
@@ -17,21 +25,30 @@
       <div class="divider"></div>
       <p class="selection item-desc">Express server with a basic HTML layout</p>
     </div>
-    <div class="selection-item" id="handlebars" data-item-type="layout" data-item-name="handlebars">
+
+
+    <div class="selection-item col-sm-12 col-md-3" id="handlebars" data-item-type="layout" data-item-name="handlebars">
       <div class="selection-image-container">
         <img class="selection selection-image" src="/img/logos/handlebars.svg" alt="handlebars logo" />
       </div>
       <p class="selection item-name">Handlebars</p>
       <p class="selection item-desc">Express server configured to enable handlebars</p>
     </div>
-    <div class="selection-item" id="react" data-item-type="layout" data-item-name="react">
+
+
+    <div class="selection-item col-sm-12 col-md-3" id="react" data-item-type="layout" data-item-name="react">
       <div class="selection-image-container">
         <img class="selection selection-image" src="/img/logos/react.svg" alt="react logo" />
       </div>
       <p class="selection item-name">React</p>
       <p class="selection item-desc">Express server with webpack, configured to compile React</p>
     </div>
+
   </div>
-  <button type="button" id="boilerplate-submit" class="btn btn-outline-primary">Get your Boilerplate!</button>
+
+</div>
+
+  </div>
+  <button type="button" id="boilerplate-submit" class="btn btn-outline-success">Get your Boilerplate!</button>
 
 </div>
